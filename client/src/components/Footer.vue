@@ -1,5 +1,5 @@
 <template>
   <footer>
-    <p>Coded by <a href="">tomwf</a></p>
+    <p>Coded by <a href="https://github.com/tomwf/sudoku-solver">tomwf</a></p>
   </footer>
 </template>
