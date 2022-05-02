@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express     = require('express');
 const bodyParser  = require('body-parser');
 const cors        = require('cors');
@@ -15,18 +16,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // User routes
 apiRoutes(app);
     
-//404 Not Found Middleware
-app.use(function(req, res, next) {
-  res.status(404)
-    .type('text')
-    .send('Not Found');
-});
-
 //Start our server and tests!
 const PORT = process.env.PORT || 5000
 app.listen(PORT, function () {
   console.log("Listening on port " + PORT);
-  // process.env.NODE_ENV='test'
   if (process.env.NODE_ENV==='test') {
     console.log('Running Tests...');
     setTimeout(function () {
@@ -37,14 +30,23 @@ app.listen(PORT, function () {
         console.error(error);
       }
     }, 1500);
-  } else if (process.env.NODE_ENV === 'production') {
+  }
+
+  if (process.env.NODE_ENV === 'production') {
     app.use(express.static(__dirname + '/public'))
 
     //Index page (static HTML)
     app.get('/', function (req, res) {
-      res.sendFile(process.cwd() + '/public/index.html');
+      res.sendFile(__dirname + '/public/index.html');
     });
   }
+
+  //404 Not Found Middleware
+  app.use(function(req, res, next) {
+    res.status(404)
+      .type('text')
+      .send('Not Found');
+  });
 });
 
 module.exports = app; // for testing
