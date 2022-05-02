@@ -4,6 +4,7 @@
   "description": "A simple app that solves a sudoku puzzle.",
   "main": "index.js",
   "scripts": {
+    "start": "node server/server.js",
     "dev": "nodemon server/server.js",
     "test": "mocha server/tests/ --recursive --ui tdd --exit"
   },
