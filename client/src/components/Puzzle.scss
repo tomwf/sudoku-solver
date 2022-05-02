@@ -1,0 +1,80 @@
+$main-bg: rgb(39, 41, 85);
+$grid-dark-blue: rgb(67, 69, 144);
+$grid-dark-blue-shadow: rgb(51, 54, 124);
+$grid-blue: rgb(96, 100, 185); // grid bg, text
+$grid-blue-shadow: rgb(65, 69, 146);
+$grid-bg: rgb(31, 34, 77);
+$grid-shadow: rgb(27, 28, 67);
+$white: rgb(255, 255, 255);
+
+.puzzle {
+  display: grid;
+  grid-template-areas: 
+    "  .  xAxisLegend"
+    "yAxisLegend grid";
+  grid-template-columns: 30px minmax(200px, 400px);
+  grid-template-rows: 30px clamp(240px, 460px, 105vw);
+  text-align: center;
+  justify-content: center;
+  font-weight: 600;
+  margin-bottom: 2em;
+}
+
+$grid-col-gap: 3px;
+$grid-row-gap: 7px;
+
+.grid {
+  grid-area: grid;
+  background-color: $grid-bg;
+  box-shadow: 0 16px 0 $grid-shadow;
+  border-radius: 4px;
+  border-spacing: $grid-col-gap $grid-row-gap;
+  padding: 0 4px 4px 4px;
+  color: $white;
+
+  &__input {
+    border-radius: 2px;
+  }
+
+  &__dark {
+    background-color: $grid-dark-blue;
+    box-shadow: 0 4px 0 $grid-dark-blue-shadow;
+  }
+
+  &__light {
+    background-color: $grid-blue;
+    box-shadow: 0 4px 0 $grid-blue-shadow;
+  }
+}
+
+.xAxisLegend {
+  grid-area: xAxisLegend;
+  border-spacing: $grid-col-gap 0;
+  padding: 0 4px;
+  color: $grid-blue;
+}
+
+.yAxisLegend {
+  @mixin grid-display {
+    display: grid;
+    justify-content: stretch;
+  }
+
+  grid-area: yAxisLegend;
+  border-spacing: 0 $grid-row-gap;
+  padding: 4px 0;
+  color: $grid-blue;
+  @include grid-display;
+
+  tbody, tr {
+    @include grid-display;
+  }
+
+  tr {
+    align-items: center;
+  }
+
+  td {
+    display: block;
+  }
+}

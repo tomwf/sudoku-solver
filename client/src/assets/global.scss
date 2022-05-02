@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap');
+
+$main-bg: rgb(39, 41, 85);
+$grid-blue: rgb(96, 100, 185); // grid bg, text
+$white: rgb(255, 255, 255);
+$orange: rgb(253, 176, 146);
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  font: inherit;
+  color: inherit;
+  color: $orange;
+}
+
+body {
+  background-color: $main-bg;
+  font-family: 'Rubik', sans-serif;
+}
+
+header, footer {
+  text-align: center;
+  color: $grid-blue;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 800px) {
+  main {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .puzzle {
+    min-width: 430px;
+  }
+}
+
+footer {
+  margin: 1em 0;
+}
+
+#app {
+  max-width: 1000px;
+  margin: 0 auto;
+}
