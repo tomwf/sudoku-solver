@@ -7,10 +7,8 @@ import Footer from "./components/Footer.vue"
 
 <template>
   <Header />
-  <main>
-    <Puzzle />
-    <InputForm />
-  </main>
+  <Puzzle />
+  <InputForm />
   <Footer />
 </template>
 

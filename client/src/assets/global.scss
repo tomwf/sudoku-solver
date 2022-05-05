@@ -34,13 +34,36 @@ main {
 }
 
 @media (min-width: 800px) {
-  main {
-    flex-direction: row-reverse;
+  .puzzle {
+    min-width: 430px;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      " title  puzzle "
+      " form   puzzle "
+      " footer puzzle ";
     align-items: center;
+    padding-top: 2em;
+  }
+
+  header {
+    grid-area: title;
+  }
+
+  form {
+    grid-area: form;
+  }
+
+  footer {
+    grid-area: footer;
   }
 
   .puzzle {
-    min-width: 430px;
+    grid-area: puzzle;
   }
 }
 
