@@ -1,6 +1,6 @@
 # Sudoku Solver
 This is a simple app that solves a sudoku puzzle for you.
-![](./client/public/screenshot.png)
+![](./desktop.png)
 
 # How To Use
 cd into the cloned repository then run:
