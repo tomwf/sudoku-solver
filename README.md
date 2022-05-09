@@ -1,8 +1,11 @@
 # Sudoku Solver
+
 This is a simple app that solves a sudoku puzzle for you.
+
 ![](./desktop.png)
 
 ## How To Use
+
 ```bash
 git clone https://github.com/tomwf/sudoku-solver.git
 ```
